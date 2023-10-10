@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="styles.css">
     <title>Ejercicio 3</title>
 </head>
-<body id="fondo">
-    <button class="cambiar-color" style="background-color: red;" onclick="color()">Rojo</button>
-    <button id="boton" class="cambiar-color" style="background-color: blue;" onclick="cambiarColorDeFondo()">Azul</button>
-    <button id="boton" class="cambiar-color" style="background-color: green;" onclick="cambiarColorDeFondo()">Verde</button>
-    <button id="boton" class="cambiar-color" style="background-color: yellow;" onclick="cambiarColorDeFondo()">Amarillo</button>
-    <button id="boton" class="cambiar-color" style="background-color: black;" onclick="cambiarColorDeFondo()">Negro</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Fondo</title>
+</head>
+<body>
+    <div class="fondo_botones">
+        <button class="botones_colores" id="button1" style="background-color: red;" value="red" onclick="color_fondo()">Rojo</button>
+        <button class="botones_colores" id="button2" style="background-color: green;" value="green" onclick="color_fondo()">Verde</button>
+        <button class="botones_colores" id="button3" style="background-color: blue;" value="blue" onclick="color_fondo()">Azul</button>
+        <button class="botones_colores" id="button4" style="background-color: yellow;" value="yellow" onclick="color_fondo()">Amarillo</button>
+        <button class="botones_colores" id="button5" style="background-color: purple;" value="purple" onclick="color_fondo()">Morado</button>
+    </div>
 </body>
 </html>

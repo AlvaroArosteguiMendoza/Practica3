@@ -56,36 +56,15 @@ function restar(){
     divNumero.textContent = numeroActual;
 }
 
-function cambiarColorDeFondo(){
-    var body = document.body;
-    var boton = document.getElementById("boton");
-    var color_fondo = window.getComputedStyle(boton).getPropertyValue("background-color");
-    if(color_fondo === "red"){
-        body.style.backgroundColor ="red";
-    }else if(color_fondo === "green"){
-        body.style.backgroundColor="green";
-    }else if(color_fondo === "blue"){
-        body.style.backgroundColor="blue";
-    }else if(color_fondo === "yellow"){
-        body.style.backgroundColor="yellow";
-    }else if(color_fondo === "black"){
-        body.style.backgroundColor="black";
-    }
-}
-function color(){
-    let fondo = document.getElementById("fondo");
-    var boton = document.getElementById("boton");
-    var color_fondo = boton.getPropertyValue("background-color");
-    if(color_fondo === "red"){
-        fondo.style.backgroundColor ="red";
-    }else if(color_fondo === "green"){
-        fondo.style.backgroundColor="green";
-    }else if(color_fondo === "blue"){
-        fondo.style.backgroundColor="blue";
-    }else if(color_fondo === "yellow"){
-        fondo.style.backgroundColor="yellow";
-    }else if(color_fondo === "black"){
-        fondo.style.backgroundColor="black";
-    }
+function color_fondo(){
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const color = button.value;
+            document.body.style.backgroundColor = color;
+        });
+    });
+
 }
 
