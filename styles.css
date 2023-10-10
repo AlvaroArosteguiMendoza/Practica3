@@ -43,6 +43,16 @@ nav {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
   }
+  .ohnohermano{
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  }
+  .ohnohermano img{
+    text-align: center;
+    width: 600px;
+    height: 600px;
+  }
 .botones_tabla{
     display: flex;
 	flex-direction: row;
