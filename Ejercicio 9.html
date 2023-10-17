@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9</title>
+
+        <link rel="stylesheet" type="text/css" href="LEER MAS.css">
+
+
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="titulo">Jonathan Davis</h1>
+        <img class="korn" src="images/jonathan.jfif">
+        <p class="textoescondido">you not rrrh rot
+            dot n dot n dot per rot
+            dot n not n dot per
+            n dot chi cot n dot rrr ah
+            dot dot ki o ma gri a dot
+            dot ers a pa ta ko
+            some play to we
+            a dot think up a bite rah
+            sometimes you might
+            ooh ooh rrrh
+            we thought we might
+            dot be mer hot something
+            what are you ma ah
+            do bro what are mines is
+            dot ooh ooh
+            rot in dot n bite
+            ooh na na er na he
+            woo hoo rah
+            ate no hoo dot er ha
+            ya dot im wer rah
+            Twist
+            Lyrics Version
+            You're not the right one dumb damn rapper
+            Not the right goddamn
+            Who are you to rap sh*t take off
+            And who says you're right
+            On top you think you'r bomb artista
+            But you're bent out of oooo right
+            Suck my dick
+            But don't you think that you're oooo right
+            Sometimes things might make me ooo ooo it makes me mad
+            And when it happens f**k it
+            Rugged in mind a hint by bite
+            Why does it not exist in you?
+            Right, sh*t, why hit in yet another day
+            Woo hoo right
+            It's not woo hoo right
+            But you'r wrong
+            Twist
+            Put me in right now make mad
+            Prove that you're right
+            Somehow you're not right, huh
+            But that doesn't make me mad
+            Right now you're beggin' for a little brew
+            All night
+            Yeah it's so simple
+            I had some Red Dog, you hand over it
+            Twist
+            </p>
+            <p class="textoescondido">- Jonathan Davis</p>
+    </div>
+    <button class="leermas" onclick="toggleText()">Spoiler</button>
+    <script>
+        function toggleText() {
+  var text = document.querySelector('.textoescondido');
+  var button = document.querySelector('.leermas');
+  if (text.style.display === "none") {
+    text.style.display = "block";
+    text.style.textOverflow = "unset";
+    text.style.whiteSpace = "normal";
+    button.textContent = "Esconder texto";
+  } else {
+    text.style.display = "none";
+    text.style.textOverflow = "ellipsis";
+    text.style.whiteSpace = "nowrap";
+    button.textContent = "Spoiler";
+  }
+}
+    </script>
+</body>
+</html>

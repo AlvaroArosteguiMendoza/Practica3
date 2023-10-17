@@ -68,3 +68,107 @@ function color_fondo(){
 
 }
 
+const menuItems = document.querySelectorAll('.menu-item');
+
+menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', () => {
+        const submenu = menuItem.querySelector('.submenu');
+        if (submenu) {
+            if (menuItem.classList.contains('active')) {
+                menuItem.classList.remove('active');
+            } else {
+                closeOpenSubmenus();
+                menuItem.classList.add('active');
+            }
+        }
+    });
+});
+
+function closeOpenSubmenus() {
+    const activeMenuItems = document.querySelectorAll('.menu-item.active');
+    activeMenuItems.forEach((item) => {
+        item.classList.remove('active');
+    });
+}
+
+function showSubmenu(submenuId) {
+    const submenus = document.querySelectorAll('.submenu2');
+    submenus.forEach((submenu) => {
+        if (submenu.id === submenuId) {
+            submenu.style.display = 'block';
+        } else {
+            submenu.style.display = 'none';
+        }
+    });
+}
+const divs = document.querySelectorAll('.race-div');
+const startButton = document.getElementById('startRace');
+const resetButton = document.getElementById('resetRace');
+
+let raceInterval;
+let winner;
+
+startButton.addEventListener('click', startRace);
+resetButton.addEventListener('click', resetRace);
+
+function startRace() {
+    if (raceInterval) return; // Evita que se inicie otra carrera antes de que termine la actual
+    winner = null;
+    startButton.disabled = true;
+    resetButton.disabled = true;
+
+    divs.forEach((div) => {
+        const speed = Math.random() * 10 + 5; // Velocidad aleatoria
+        moveDiv(div, speed);
+    });
+}
+
+function moveDiv(div, speed) {
+    let left = 0;
+    raceInterval = setInterval(() => {
+        if (left >= window.innerWidth - 100) {
+            clearInterval(raceInterval);
+            if (!winner) {
+                winner = div.style.backgroundColor;
+                alert(`Gana el div de color ${winner}`);
+                startButton.disabled = false;
+                resetButton.disabled = false;
+            }
+        } else {
+            left += speed;
+            div.style.left = left + 'px';
+        }
+    }, 100);
+}
+
+function resetRace() {
+    if (raceInterval) {
+        clearInterval(raceInterval);
+    }
+    divs.forEach((div) => {
+        div.style.left = '0px';
+    });
+    startButton.disabled = false;
+    resetButton.disabled = false;
+}
+
+const spoilerButton = document.getElementById('spoiler-button');
+const spoilerContent = document.getElementById('spoiler-content');
+
+spoilerButton.addEventListener('click', toggleSpoiler);
+
+function toggleSpoiler() {
+    if (spoilerContent.style.display === 'none' || spoilerContent.style.display === '') {
+        spoilerContent.style.display = 'block';
+        spoilerButton.textContent = 'Ocultar';
+    } else {
+        spoilerContent.style.display = 'none';
+        spoilerButton.textContent = 'Mostrar';
+    }
+}
+
+
+
+
+
+
